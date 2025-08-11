@@ -17,17 +17,17 @@ function gerarImagemAuto() {
         'url(./img/itapevi.png)',
         'url(./img/jandira.png)',
         'url(./img/osasco.png)'
-    ];
+    ]
 
-    let indice = 0;
+    let posicao = 0
 
-    function trocarImagem() {
-        document.documentElement.style.setProperty('--bg-image', cidades[indice]);
-        indice = (indice + 1) % cidades.length;
+    function slide() {
+        document.documentElement.style.setProperty('--bg-image', cidades[posicao])
+        posicao = (posicao + 1) % cidades.length
     }
 
-    trocarImagem();
-    setInterval(trocarImagem, 2000);
+    slide()
+    setInterval(slide, 2000)
 }
 
 
