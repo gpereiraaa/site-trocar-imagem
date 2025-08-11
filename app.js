@@ -8,6 +8,7 @@ function trocarImagem () {
     document.documentElement.style.setProperty('--bg-image', `url(./img/${cidade}.png)`)
 }
 
+
 function gerarImagemAuto() {
     const cidades = [
         'url(./img/barueri.png)',
@@ -16,10 +17,19 @@ function gerarImagemAuto() {
         'url(./img/itapevi.png)',
         'url(./img/jandira.png)',
         'url(./img/osasco.png)'
-    ]
-    const randomIndex = Math.floor(Math.random() * cidades.length)
-    document.documentElement.style.setProperty('--bg-image', cidades[randomIndex])
+    ];
+
+    let indice = 0;
+
+    function trocarImagem() {
+        document.documentElement.style.setProperty('--bg-image', cidades[indice]);
+        indice = (indice + 1) % cidades.length;
+    }
+
+    trocarImagem();
+    setInterval(trocarImagem, 2000);
 }
+
 
 botaoTrocarImagem.addEventListener('click', trocarImagem)
 botaoAuto.addEventListener('click', gerarImagemAuto)
