@@ -27,7 +27,7 @@ function gerarImagemAuto() {
     }
 
     slide()
-    setInterval(slide, 2000)
+    setInterval(slide, 3000)
 }
 
 
